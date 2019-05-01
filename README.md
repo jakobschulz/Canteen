@@ -10,8 +10,9 @@ Version 3.0 will be my index page.
 
 Version 4.0 will be my purchase page which will reduce the stock of each food item.
 
-Version 4.1 will be 
+Version 5.0 will be the ability to restock
 
+Version 6.0 will be the ability to see how many pieces of food have been sold
 
 
 
