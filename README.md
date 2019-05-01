@@ -16,5 +16,7 @@ Version 6.0 will be the ability to see how many pieces of food have been sold
 
 =============================================================================
 
+# Working on my program
+
 Version 1.0
   I set up my python server and class for the food items in my canteen.
