@@ -1,4 +1,3 @@
-
 from bottle import run, route, view, get, post, request, static_file  
 from itertools import count
 
@@ -11,13 +10,17 @@ class Food_Item:
         self.price = price
         self.stock = stock
         
-items = [Food_Item("Sushi Roll", int(9), int(5)),
+#this is my class containg each of my food items.
+items = [Food_Item("Sushi Roll", int(9), int(5)), 
          Food_Item("Chips and Hot Dog", int(7), int(12)),
-         Food_Item("Ham and Cheese Sandwich", int(6), int(4))]
+         Food_Item("Ham and Cheese Sandwich", int(6), int(4))] 
 
 
-
-
+#index page
+@route("/")
+@view("index")
+def index():
+    pass
 
 
 
