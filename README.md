@@ -6,11 +6,13 @@ Version 1.0 will be creating my python server and a class for food items.
 
 Version 2.0 will be creating my header, navbar and index page.
 
-Version 3.0 will be my purchase page which will reduce the stock of each food item.
+Version 3.0 will be a page displaying all my products.
 
-Version 4.0 will be the ability to restock
+Version 4.0 will be my purchase page which will reduce the stock of each food item.
 
-Version 5.0 will be the ability to see how many pieces of food have been sold
+Version 5.0 will be the ability to restock
+
+Version 6.0 will be the ability to see how many pieces of food have been sold
 
 =============================================================================
 
