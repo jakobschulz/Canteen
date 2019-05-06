@@ -18,3 +18,6 @@ Version 5.0 will be the ability to see how many pieces of food have been sold
 
 Version 1.0
   I set up my python server and class for the food items in my canteen.
+
+Version 2.0
+  I set up my index, navbar and header pages. I also decided on a design for my page.
