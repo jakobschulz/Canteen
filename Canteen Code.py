@@ -1,4 +1,3 @@
-
 from bottle import run, route, view, get, post, request, static_file  
 from itertools import count
 
