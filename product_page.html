@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+%include('shared/header.html')
+%include('shared/navbar.html')
+	<body class = "row blue">
+		<div class="row">
+		<div class="col s12">Menu</div>
+		% for item in item_list:
+			<div class="card">
+			<div class="card blue darken-3">
+			<div class="card-content white-text">
+			<h4><b>{{item.name}}</b></h4>  
+			<p>Amount currently in stock: {{item.stock}}</p>
+		<p>${{item.price}}</p>
+		</div>
+		</div>
+            
+		%end
+		</div>
+	</body>
+</html>

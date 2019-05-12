@@ -22,8 +22,11 @@ items = [Food_Item("Sushi Roll", int(9), int(5)),
 def index():
     pass
 
-
-
+@route("/product_page")
+@view("product_page")
+def product_page():
+    data = dict (item_list = items)
+    return data
 
 
 
