@@ -35,7 +35,7 @@ def product_page():
 
 
 
-@route("/picture/<filename>")
+@route("/images/<filename>")
 def serve_picture(filename):   #need this for images to work on my website
     return static_file(filename, root ="./images")
 
