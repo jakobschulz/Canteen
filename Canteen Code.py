@@ -4,17 +4,17 @@ from itertools import count
 class Food_Item:
     _ids = count(0)
     
-    def __init__(self, name, price, stock):  #makes these variables for each item of food
+    def __init__(self, name, price, stock, image):  #makes these variables for each item of food
         self.id = next(self._ids)
         self.name = name
-        self.image = image
         self.price = price
         self.stock = stock
+        self.image = image
         
 #this is my class containg each of my food items.
-items = [Food_Item("Sushi Roll","sushi.jpg" ,int(9), int(5)), 
-         Food_Item("Chips and Hot Dog","Hot dogs.jpg" , int(7), int(12)),
-         Food_Item("Ham and Cheese Sandwich", "",int(6), int(4))] 
+items = [Food_Item("Sushi Roll",int(9), int(5),"sushi.jpg"), 
+         Food_Item("Chips and Hot Dog", int(7), int(12),"Hot dogs.jpg"),
+         Food_Item("Ham and Cheese Sandwich", int(6), int(4), "H&C sandwich.jpg")] 
 
 
 #index page
