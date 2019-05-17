@@ -23,3 +23,6 @@ Version 1.0
 
 Version 2.0
   I set up my index, navbar and header pages. I also decided on a design for my page.
+
+Version 3.0
+  I set up my product page which displays my items name, image, stock and price
