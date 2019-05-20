@@ -13,6 +13,11 @@
 			<p><img src="images/{{item.image}}" style = "width:500px;height:300px;"></p>
 			<p>Amount currently in stock: {{item.stock}}</p>
 			<p>${{item.price}}</p>
+			%if item.stock > 0:  #<!-- Allows the user to purchase items when there is stock available -->
+						<a href = "/purchase_page/{{item.id}}" ><button class="btn waves-effect waves-light light-blue" type="submit" name="action">Purchase</button> </a>
+					%else:
+						<a href = "#" ><button class="btn waves-effect waves-light disabled" type="submit" name="action">Out of Stock</button> </a>
+					%end
 		</div>
 		</div>
             
