@@ -14,6 +14,8 @@ Version 5.0 will be the ability to restock
 
 Version 6.0 will be the ability to see how many pieces of food have been sold
 
+Version 7.0 will be a total price of all the items in one order.
+
 =============================================================================
 
 # Working on my program
@@ -26,3 +28,6 @@ Version 2.0
 
 Version 3.0
   I set up my product page which displays my items name, image, stock and price
+
+Version 4.0
+  I set up my purchase page which takes 1 away from the stock of the specified item

@@ -30,7 +30,17 @@ def product_page():
     return data
 
 
-
+@route('/purchase_page/<item_id>')
+@view('purchase_page')
+def purchase_page(item_id):
+    item_id = int(item_id)
+    found_item = None
+    for item in items: 
+        if item.id == item_id:
+            found_item  = item
+    data = dict (item = found_item)
+    found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
+    return data 
 
 
 
