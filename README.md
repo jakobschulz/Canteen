@@ -14,6 +14,8 @@ Version 5.0 will be the ability to restock
 
 Version 6.0 will be the ability to see how many pieces of food have been sold
 
+Version 7.0 will be a total price of all the items in one order.
+
 =============================================================================
 
 # Working on my program
