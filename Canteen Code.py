@@ -42,6 +42,24 @@ def purchase_page(item_id):
     found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
     return data 
 
+@route('/restock_page/<item_id>', method='POST')
+@view('restock_page')
+def restock_page(item_id):
+    item_id = int(item_id)
+    found_item = None
+    for item in items: 
+        if item.id == item_id:
+            found_item  = item
+    data = dict (item = found_item)
+    restock_add = request.forms.get('restock_add')
+    pass
+
+
+
+
+
+
+
 
 
 
