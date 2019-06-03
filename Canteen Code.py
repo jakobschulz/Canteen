@@ -66,12 +66,6 @@ def restock_page(item_id):
 
 
 
-
-
-
-
-
-
 @route("/images/<filename>")
 def serve_picture(filename):   #need this for images to work on my website
     return static_file(filename, root ="./images")
