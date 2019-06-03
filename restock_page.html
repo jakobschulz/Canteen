@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+%include('shared/header.html')
+%include('shared/navbar.html')
+	<body>
+		<div class="row">
+		<div class="col s12">Restock Page</div>
+		
+		% for item in item_list:   
+			<div class="card"> <!-- makes a card for each item -->
+			<div class="card blue darken-4">
+			<div class="card-content red-text">
+			<h4><b>{{item.name}}</b></h4>  
+			<p><img src="images/{{item.image}}" style = "width:500px;height:300px;"></p>
+			<p>Amount currently in stock: {{item.stock}}</p>
+			
+			<form class="col s12" action="/restock_success/{{item.id}}" method="post"> <!--Form for inputing how much stock is to be increased by -->
+				<div class="row ">
+				<input class="white-text" placeholder ="Input here how much to increase stock by" id="restock_add" type="number" name="restock_add" class="validate" min="0" max="10000">
+				<button class="btn waves-effect waves-light light-blue" type="submit" name="action">Restock</button>
+				</div>
+			</form>
+			<br style = "line-height:5;">
+			
+		</div>
+		</div>
+		%end
+		</div>
+	</body>
+</html>

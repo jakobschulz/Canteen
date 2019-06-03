@@ -12,9 +12,9 @@ class Food_Item:
         self.image = image
         
 #this is my class containg each of my food items.
-items = [Food_Item("Sushi Roll",int(9), int(5),"sushi.jpg"), 
-         Food_Item("Chips and Hot Dog", int(7), int(12),"Hot dogs.jpg"),
-         Food_Item("Ham and Cheese Sandwich", int(6), int(4), "H&C sandwich.jpg")] 
+items = [Food_Item("Sushi Roll", 9, 5,"sushi.jpg"), 
+         Food_Item("Chips and Hot Dog", 7, 12,"Hot dogs.jpg"),
+         Food_Item("Ham and Cheese Sandwich", 6, 4, "H&C sandwich.jpg")] 
 
 
 #index page
@@ -41,6 +41,27 @@ def purchase_page(item_id):
     data = dict (item = found_item)
     found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
     return data 
+
+
+@route("/restock_page")
+@view("restock_page")
+def restock_page():
+    data = dict (item_list = items)
+    return data
+
+@route('/restock_success/<item_id>', method='POST')
+@view('restock_success')
+def restock_page(item_id):
+    item_id = int(item_id)
+    found_item = None
+    for item in items: 
+        if item.id == item_id:
+            found_item  = item
+    data = dict (item = found_item)
+    restock_add = request.forms.get('restock_add')
+    restock_add =int(restock_add)
+    found_item.stock = found_item.stock + restock_add
+    pass
 
 
 
