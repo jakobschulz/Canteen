@@ -4,17 +4,18 @@ from itertools import count
 class Food_Item:
     _ids = count(0)
     
-    def __init__(self, name, price, stock, image):  #makes these variables for each item of food
+    def __init__(self, name, price, stock, image, amount_sold):  #makes these variables for each item of food
         self.id = next(self._ids)
         self.name = name
         self.price = price
         self.stock = stock
         self.image = image
+        self.amount_sold = amount_sold
         
 #this is my class containg each of my food items.
-items = [Food_Item("Sushi Roll", 9, 5,"sushi.jpg"), 
-         Food_Item("Chips and Hot Dog", 7, 12,"Hot dogs.jpg"),
-         Food_Item("Ham and Cheese Sandwich", 6, 4, "H&C sandwich.jpg")] 
+items = [Food_Item("Sushi Roll", 9, 5,"sushi.jpg", 0), 
+         Food_Item("Chips and Hot Dog", 7, 12,"Hot dogs.jpg", 0),
+         Food_Item("Ham and Cheese Sandwich", 6, 4, "H&C sandwich.jpg", 0)] 
 
 
 #index page
@@ -40,6 +41,7 @@ def purchase_page(item_id):
             found_item  = item
     data = dict (item = found_item)
     found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
+    found_item.amount_sold = found_item.amount_sold + 1 #add the amount of stock minused from stock to total amount of stock purchased.
     return data 
 
 
