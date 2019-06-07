@@ -14,6 +14,8 @@ Version 5.0 will be the ability to restock
 
 Version 6.0 will be the ability to see how many pieces of food have been sold
 
+Version 7.0 will be the ability to add more than one stock at a time
+
 =============================================================================
 
 # Working on my program
