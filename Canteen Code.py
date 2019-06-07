@@ -41,7 +41,7 @@ def purchase_page(item_id):
             found_item  = item
     data = dict (item = found_item)
     found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
-    found_item.amount_stock = found_item.amount_stock + 1 #add the amount of stock minused from stock to total amount of stock purchased.
+    found_item.amount_sold = found_item.amount_sold + 1 #add the amount of stock minused from stock to total amount of stock purchased.
     return data 
 
 
