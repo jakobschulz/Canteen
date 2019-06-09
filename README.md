@@ -34,3 +34,7 @@ Version 4.0
 
 Version 5.0
   I set up my restock page which allows you to increase the stock by a specified amount for a food item.
+
+Version 6.0
+  I displayed under each food item how much stock had been sold of that item.
+  
