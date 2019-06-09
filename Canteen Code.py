@@ -31,7 +31,7 @@ def product_page():
     return data
 
 
-@route('/purchase_page/<item_id>')
+@route('/purchase_page/<item_id>', method='POST')
 @view('purchase_page')
 def purchase_page(item_id):
     item_id = int(item_id)
@@ -40,8 +40,13 @@ def purchase_page(item_id):
         if item.id == item_id:
             found_item  = item
     data = dict (item = found_item)
-    found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
-    found_item.amount_sold = found_item.amount_sold + 1 #add the amount of stock minused from stock to total amount of stock purchased.
+    purchase_amount = request.forms.get(purchase_amount)
+    purchase_amount = int(purchase_amount)
+    found_item.stock = found_item.stock-purchase_amount
+    
+    #Old code I have not deleted yet for reference
+    #found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
+    #found_item.amount_sold = found_item.amount_sold + 1 #add the amount of stock minused from stock to total amount of stock purchased.
     return data 
 
 
@@ -63,7 +68,7 @@ def restock_page(item_id):
     restock_add = request.forms.get('restock_add')
     restock_add =int(restock_add)
     found_item.stock = found_item.stock + restock_add
-    pass
+    pass  #try return data here
 
 
 
