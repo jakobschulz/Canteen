@@ -34,15 +34,18 @@ def product_page():
 @route('/purchase_page/<item_id>', method='POST')
 @view('purchase_page')
 def purchase_page(item_id):
+    purchase_amount = request.forms.get("purchase_amount_web")    
+    purchase_amount = int(purchase_amount)
+
     item_id = int(item_id)
     found_item = None
     for item in items: 
         if item.id == item_id:
             found_item  = item
     data = dict (item = found_item)
-    purchase_amount = request.forms.get(purchase_amount)
-    purchase_amount = int(purchase_amount)
     found_item.stock = found_item.stock-purchase_amount
+    found_item.amount_sold = found_item.amount_sold + purchase_amount            
+
     
     #Old code I have not deleted yet for reference
     #found_item.stock = found_item.stock - 1   #minus 1 from the amount of food items in stock
@@ -59,13 +62,14 @@ def restock_page():
 @route('/restock_success/<item_id>', method='POST')
 @view('restock_success')
 def restock_page(item_id):
+    restock_add = request.forms.get('restock_add')
     item_id = int(item_id)
     found_item = None
     for item in items: 
         if item.id == item_id:
             found_item  = item
     data = dict (item = found_item)
-    restock_add = request.forms.get('restock_add')
+    
     restock_add =int(restock_add)
     found_item.stock = found_item.stock + restock_add
     pass  #try return data here
