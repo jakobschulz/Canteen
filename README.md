@@ -38,3 +38,6 @@ Version 5.0
 Version 6.0
   I displayed under each food item how much stock had been sold of that item.
   
+Version 7.0
+  I gave my program the ability to buy more than 1 stock at a time
+  
