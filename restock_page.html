@@ -16,7 +16,7 @@
 			
 			<form class="col s12" action="/restock_success/{{item.id}}" method="post"> <!--Form for inputing how much stock is to be increased by -->
 				<div class="row ">
-				<input class="white-text" placeholder ="Input here how much to increase stock by" id="restock_add" type="number" name="restock_add" class="validate" min="0" max="10000">
+				<input class="white-text" placeholder ="Input here how much to increase stock by" id="restock_add" type="number" required name="restock_add" class="validate" min="0" max="1000">
 				<button class="btn waves-effect waves-light light-blue" type="submit" name="action">Restock</button>
 				</div>
 			</form>

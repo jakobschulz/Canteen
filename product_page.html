@@ -13,11 +13,21 @@
 			<p><img src="images/{{item.image}}" style = "width:500px;height:300px;"></p>
 			<p>Amount currently in stock: {{item.stock}}</p>
 			<p>${{item.price}}</p>
-			%if item.stock > 0:  #<!-- Allows the user to purchase items when there is stock available -->
-						<a href = "/purchase_page/{{item.id}}" ><button class="btn waves-effect waves-light light-blue" type="submit" name="action">Purchase</button> </a>
-					%else:
-						<a href = "#" ><button class="btn waves-effect waves-light disabled" type="submit" name="action">Out of Stock</button> </a>
-					%end
+			
+			%if item.stock > 0:  # Allows the user to purchase items when there is stock available 		
+				<a>
+				<div class="row">
+					<form class="col s12" action="/purchase_page/{{item.id}}" method="post"> <!--Form for inputing how much stock is to be purchased -->
+					<input class="white-text" placeholder ="Input here how much do you want to buy." id="purchase_amount" type="number" required name="purchase_amount"  min="0" max={{item.stock}}>
+					<a href="/purchase_page/{{item.id}}"><button class="btn waves-effect waves-light light-blue" type="submit" name="action">Purchase</button></a>
+					</form>
+				</div>
+				</a>
+				%else:
+					<a href = "#" ><button class="btn waves-effect waves-light disabled" type="number" type="submit" name="action">Out of Stock</button> </a>
+			%end	
+			
+			
 			<p>Total amount of items sold: {{item.amount_sold}}</p> 
 		</div>
 		%end

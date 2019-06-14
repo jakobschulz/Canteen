@@ -14,6 +14,8 @@ Version 5.0 will be the ability to restock
 
 Version 6.0 will be the ability to see how many pieces of food have been sold
 
+Version 7.0 will be the ability to add more than one stock at a time
+
 =============================================================================
 
 # Working on my program
@@ -32,3 +34,10 @@ Version 4.0
 
 Version 5.0
   I set up my restock page which allows you to increase the stock by a specified amount for a food item.
+
+Version 6.0
+  I displayed under each food item how much stock had been sold of that item.
+  
+Version 7.0
+  I gave my program the ability to buy more than 1 stock at a time
+  
