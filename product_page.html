@@ -18,7 +18,7 @@
 				<a>
 				<div class="row">
 					<form class="col s12" action="/purchase_page/{{item.id}}" method="post"> <!--Form for inputing how much stock is to be purchased -->
-					<input class="white-text" placeholder ="Input here how much do you want to buy." id="purchase_amount" type="number" required name="purchase_amount"  min="0" max={{item.stock}}>
+					<input class="white-text" placeholder ="Input here how much do you want to buy." id="purchase_amount" type="number" required name="purchase_amount"  min="1" max={{item.stock}}>
 					<a href="/purchase_page/{{item.id}}"><button class="btn waves-effect waves-light light-blue" type="submit" name="action">Purchase</button></a>
 					</form>
 				</div>
