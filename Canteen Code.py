@@ -1,4 +1,4 @@
-from bottle import run, route, view, get, post, request, static_file  
+from bottle import run, route, view, get, post, request, static_file   #imports tools from bottle
 from itertools import count
 
 class Food_Item:
@@ -19,51 +19,52 @@ items = [Food_Item("Sushi Roll", 9, 5,"sushi.jpg", 0),
 
 
 #index page
+#needed to attach decorators to and to create the page.
 @route("/")
 @view("index")
 def index():
     pass
 
+#product page
 @route("/product_page")
 @view("product_page")
 def product_page():
-    data = dict (item_list = items)
-    return data
+    data = dict (item_list = items) #makes a dictionary of my food items
+    return data #pretty self explanitory, returns data
 
-
-@route('/purchase_page/<item_id>', method='POST')
+#purchase page
+@route('/purchase_page/<item_id>', method='POST') #uses the method post to get the input from my online form
 @view('purchase_page')
-def purchase_page(item_id):
-    purchase_amount = request.forms.get("purchase_amount")    #gets information from my form.
-    purchase_amount = int(purchase_amount)
+def purchase_page(item_id): #passes purchase_page item_id
+    purchase_amount = request.forms.get("purchase_amount")    #gets information from my form
+    purchase_amount = int(purchase_amount)                    #makes sure purchase_amount is an integer
 
-    item_id = int(item_id)
-    found_item = None
-    for item in items: 
-        if item.id == item_id:
-            found_item  = item
-    data = dict (item = found_item)      #sets an item to found item
-    found_item.stock = found_item.stock-purchase_amount
-    found_item.amount_sold = found_item.amount_sold + purchase_amount            
-
+    item_id = int(item_id) #makes sure item_id is a number
+    found_item = None      #creates the found_item 
+    for item in items:     #for each item in items it does the below process
+        if item.id == item_id: #looks through items to find the item that was clicked on
+            found_item  = item #makes that item found item
+    data = dict (item = found_item)   #makes a dictionary of found item
+    found_item.stock = found_item.stock-purchase_amount #minuses the amount of stock the user buys from item stock
+    found_item.amount_sold = found_item.amount_sold + purchase_amount #adds the amount of stock the user buys to the amount of that stock sold          
     return data 
 
-
+#restock page
 @route("/restock_page")
 @view("restock_page")
 def restock_page():
-    data = dict (item_list = items)
-    return data
+    data = dict (item_list = items) #makes a dictionary of my food items
+    return data #returns that dictionary
 
-@route('/restock_success/<item_id>', method='POST')
+@route('/restock_success/<item_id>', method='POST') #uses the method post to get the input from my online form
 @view('restock_success')
-def restock_page(item_id):
+def restock_page(item_id): #passes restock_page item_id
     restock_add = request.forms.get('restock_add') #gets info from html form
-    item_id = int(item_id)
-    found_item = None
-    for item in items: 
-        if item.id == item_id:
-            found_item  = item
+    item_id = int(item_id) #makes sure item_id is a number 
+    found_item = None      #creates found_item
+    for item in items:     #does the below for each item in items
+        if item.id == item_id: #checks to see for each item in items if the item it is scanning is the item was the item that was clicked on
+            found_item  = item #sets that item to f
     data = dict (item = found_item)
     
     restock_add =int(restock_add)
