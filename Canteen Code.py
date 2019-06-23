@@ -40,7 +40,7 @@ def purchase_page(item_id): #passes purchase_page item_id
     purchase_amount = int(purchase_amount)                    #makes sure purchase_amount is an integer
 
     item_id = int(item_id) #makes sure item_id is a number
-    found_item = None      #creates the found_item 
+    found_item = None
     for item in items:     #for each item in items it does the below process
         if item.id == item_id: #looks through items to find the item that was clicked on
             found_item  = item #makes that item found item
@@ -61,11 +61,11 @@ def restock_page():
 def restock_page(item_id): #passes restock_page item_id
     restock_add = request.forms.get('restock_add') #gets info from html form
     item_id = int(item_id) #makes sure item_id is a number 
-    found_item = None      #creates found_item
+    found_item = None 
     for item in items:     #does the below for each item in items
         if item.id == item_id: #checks to see for each item in items if the item it is scanning is the item was the item that was clicked on
-            found_item  = item #sets that item to f
-    data = dict (item = found_item)
+            found_item  = item 
+    data = dict (item = found_item) #makes a dictionary of found item
     
     restock_add =int(restock_add)
     found_item.stock = found_item.stock + restock_add #adds stock to stock amount
@@ -76,6 +76,6 @@ def restock_page(item_id): #passes restock_page item_id
 
 @route("/images/<filename>")
 def serve_picture(filename):   #need this for images to work on my website
-    return static_file(filename, root ="./images")
+    return static_file(filename, root ="./images") 
 
-run(host ='0.0.0.0', port = 8080, reloader = True, debug = True)
+run(host ='0.0.0.0', port = 8080, reloader = True, debug = True) #runs server on localhost:8080
